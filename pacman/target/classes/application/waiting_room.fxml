@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.WaitingRoomController" alignment="CENTER" spacing="20.0" prefWidth="500" prefHeight="450" style="-fx-background-color: linear-gradient(to bottom, #1a1a2e, #16213e, #0f3460);">
+    <children>
+        <Label text="Waiting Room" style="-fx-font-size:32px; -fx-text-fill: linear-gradient(to right, #FFD700, #FFA500, #FFD700); -fx-font-weight: bold;" />
+        
+        <VBox spacing="15" alignment="CENTER" style="-fx-background-color: rgba(0, 0, 0, 0.3); -fx-background-radius: 15px; -fx-padding: 25px; -fx-border-color: linear-gradient(to right, #4A90E2, #357ABD); -fx-border-width: 2px; -fx-border-radius: 15px;" prefWidth="400">
+            <children>
+                <Label text="Share this code with your friend:" style="-fx-text-fill: linear-gradient(to right, #FFFFFF, #CCCCCC); -fx-font-size: 16px; -fx-font-weight: bold;" />
+                
+                <HBox spacing="12" alignment="CENTER">
+                    <children>
+                        <Button text="Copy" onAction="#onCopyRoomCode" 
+                                prefWidth="100" prefHeight="40"
+                                style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-background-color: linear-gradient(to bottom, #4A90E2, #357ABD); -fx-text-fill: #FFFFFF; -fx-background-radius: 8px; -fx-cursor: hand;" />
+                        <Label fx:id="roomCodeLabel" text="CODE" 
+                               style="-fx-font-size:20px; -fx-text-fill: linear-gradient(to right, #00FF00, #00CC00); -fx-font-weight: bold; -fx-padding: 8px 16px; -fx-background-color: rgba(0, 0, 0, 0.5); -fx-background-radius: 8px;" />
+                    </children>
+                </HBox>
+                
+                <Label text="Players joined:" style="-fx-text-fill: linear-gradient(to right, #FFFFFF, #CCCCCC); -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 15 0 5 0;" />
+                <VBox fx:id="playersList" spacing="8" alignment="CENTER" />
+            </children>
+        </VBox>
+        
+        <HBox spacing="12" alignment="CENTER">
+            <children>
+                <Button text="Play" onAction="#onPlay" 
+                        prefWidth="150" prefHeight="45"
+                        style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-background-color: linear-gradient(to bottom, #00FF00, #00CC00); -fx-text-fill: #000033; -fx-background-radius: 10px; -fx-cursor: hand;" />
+                <Button text="Cancel" onAction="#onCancel" 
+                        prefWidth="150" prefHeight="45"
+                        style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-background-color: linear-gradient(to bottom, #FF6B6B, #E55555); -fx-text-fill: #FFFFFF; -fx-background-radius: 10px; -fx-cursor: hand;" />
+            </children>
+        </HBox>
+        
+        <Label fx:id="statusLabel" text="" style="-fx-text-fill: linear-gradient(to right, #FFD700, #FFA500); -fx-font-size: 14px; -fx-font-weight: bold;" />
+    </children>
+    <padding>
+        <Insets top="30" right="20" left="20" bottom="20" />
+    </padding>
+</VBox>

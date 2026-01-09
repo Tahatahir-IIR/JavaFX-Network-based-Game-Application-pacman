@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/8"
+            fx:controller="application.GameController"
+            style="-fx-background-color: #000033;">
+    <children>
+        <Pane>
+            <children>
+                <Canvas fx:id="gameCanvas"
+                        width="700.0"
+                        height="500.0"
+                        focusTraversable="true" />
+            </children>
+        </Pane>
+        
+          <HBox fx:id="bottomBar"
+              minHeight="60.0"
+              prefHeight="60.0"
+              visible="true"
+              style="-fx-background-color: #1a1a2e; -fx-padding: 10;"
+              VBox.vgrow="NEVER"
+              spacing="20"
+              alignment="CENTER_LEFT">
+            <children>
+                <Label fx:id="scoreLabel" text="Score: 0" style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" />
+                <Label fx:id="score2Label" text="Score 2: 0" style="-fx-text-fill: #90EE90; -fx-font-size: 18px; -fx-font-weight: bold;" />
+                <HBox HBox.hgrow="ALWAYS" />
+                <HBox fx:id="caughtPlayersBox" spacing="10" alignment="CENTER_RIGHT">
+                    <children>
+                        <ImageView fx:id="player1CaughtIcon" fitWidth="30.0" fitHeight="30.0" visible="false" />
+                        <ImageView fx:id="player2CaughtIcon" fitWidth="30.0" fitHeight="30.0" visible="false" />
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+    </children>
+</VBox>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.IntroController" 
+      fx:id="introContainer" alignment="CENTER" spacing="40.0" 
+      style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #000033 0%, #1a0033 50%, #000033 100%);" 
+      onKeyPressed="#onKeyPressed">
+    <children>
+        <!-- Title -->
+        <Label fx:id="titleLabel" text="JavaFX Network-based Game Application" 
+               style="-fx-text-fill: linear-gradient(to right, #FFFF66, #FFD700, #FFFF66); -fx-font-weight: bold; -fx-text-alignment: center;">
+            <font>
+                <Font name="Arial Bold" size="32.0" />
+            </font>
+        </Label>
+        
+        <!-- Subtitle -->
+        <Label fx:id="subtitleLabel" text="PAC-MAN" 
+               style="-fx-text-fill: linear-gradient(to right, #FFD700, #FFA500, #FFD700); -fx-font-weight: bold; -fx-text-alignment: center;">
+            <font>
+                <Font name="Arial Black" size="64.0" />
+            </font>
+        </Label>
+        
+        <!-- 2x2 Grid for Creators -->
+        <GridPane fx:id="creatorsGrid" hgap="30" vgap="30" alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints minWidth="300" prefWidth="300" maxWidth="350" />
+                <ColumnConstraints minWidth="300" prefWidth="300" maxWidth="350" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="200" prefHeight="200" />
+                <RowConstraints minHeight="200" prefHeight="200" />
+            </rowConstraints>
+            
+            <!-- Top Left: Taha Tahir -->
+            <VBox fx:id="creatorBox1" alignment="CENTER" spacing="10" 
+                  style="-fx-background-color: rgba(0, 50, 100, 0.6); -fx-background-radius: 15px; -fx-padding: 20px;">
+                <children>
+                    <Label fx:id="creatorName1" text="Taha Tahir" 
+                           style="-fx-text-fill: #00FFFF; -fx-font-weight: bold; -fx-font-size: 20px;">
+                        <font>
+                            <Font name="Arial Bold" size="20.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="creatorDesc1" 
+                           text="Conception globale de l'architecture&#10;Développement principal (logique métier, gameplay, JavaFX)&#10;Intégration des fonctionnalités et résolution des problèmes techniques&#10;Coordination technique du projet" 
+                           style="-fx-text-fill: #E0E0E0; -fx-font-size: 13px; -fx-text-alignment: center;" 
+                           wrapText="true">
+                        <font>
+                            <Font name="Arial" size="13.0" />
+                        </font>
+                    </Label>
+                </children>
+            </VBox>
+            
+            <!-- Top Right: Zakaria Bennouby -->
+            <VBox fx:id="creatorBox2" alignment="CENTER" spacing="10" GridPane.columnIndex="1"
+                  style="-fx-background-color: rgba(100, 0, 50, 0.6); -fx-background-radius: 15px; -fx-padding: 20px;">
+                <children>
+                    <Label fx:id="creatorName2" text="Zakaria Bennouby" 
+                           style="-fx-text-fill: #FF00FF; -fx-font-weight: bold; -fx-font-size: 20px;">
+                        <font>
+                            <Font name="Arial Bold" size="20.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="creatorDesc2" 
+                           text="Participation à la conception fonctionnelle&#10;Élaboration des diagrammes UML (cas d'utilisation, classes)&#10;Creation de l'interface utilisateur et level design&#10;Validation des choix de conception"
+                           style="-fx-text-fill: #E0E0E0; -fx-font-size: 13px; -fx-text-alignment: center;" 
+                           wrapText="true">
+                        <font>
+                            <Font name="Arial" size="13.0" />
+                        </font>
+                    </Label>
+                </children>
+            </VBox>
+            
+            <!-- Bottom Left: Oussama Kamil -->
+            <VBox fx:id="creatorBox3" alignment="CENTER" spacing="10" GridPane.rowIndex="1"
+                  style="-fx-background-color: rgba(0, 100, 0, 0.6); -fx-background-radius: 15px; -fx-padding: 20px;">
+                <children>
+                    <Label fx:id="creatorName3" text="Oussama Kamil" 
+                           style="-fx-text-fill: #00FF00; -fx-font-weight: bold; -fx-font-size: 20px;">
+                        <font>
+                            <Font name="Arial Bold" size="20.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="creatorDesc3" 
+                           text="Conception du modèle de données (utilisateurs, scores)&#10;Réflexion sur la structuration et la persistance des informations&#10;Participation à la gestion logique des scores et profils&#10;Tests de cohérence des données" 
+                           style="-fx-text-fill: #E0E0E0; -fx-font-size: 13px; -fx-text-alignment: center;" 
+                           wrapText="true">
+                        <font>
+                            <Font name="Arial" size="13.0" />
+                        </font>
+                    </Label>
+                </children>
+            </VBox>
+            
+            <!-- Bottom Right: Mehdi Benjelloun -->
+            <VBox fx:id="creatorBox4" alignment="CENTER" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                  style="-fx-background-color: rgba(100, 50, 0, 0.6); -fx-background-radius: 15px; -fx-padding: 20px;">
+                <children>
+                    <Label fx:id="creatorName4" text="Mehdi Benjelloun" 
+                           style="-fx-text-fill: #FFA500; -fx-font-weight: bold; -fx-font-size: 20px;">
+                        <font>
+                            <Font name="Arial Bold" size="20.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="creatorDesc4" 
+                           text="Rédaction et structuration du rapport de projet&#10;Documentation des fonctionnalités et des choix techniques&#10;Assistance au développement et tests fonctionnels&#10;Participation aux phases de validation" 
+                           style="-fx-text-fill: #E0E0E0; -fx-font-size: 13px; -fx-text-alignment: center;" 
+                           wrapText="true">
+                        <font>
+                            <Font name="Arial" size="13.0" />
+                        </font>
+                    </Label>
+                </children>
+            </VBox>
+        </GridPane>
+        
+        <!-- Press Key Label -->
+        <Label fx:id="pressKeyLabel" text="Press any key to continue..." 
+               style="-fx-text-fill: linear-gradient(to right, #FFFF66, #FFD700); -fx-font-size: 16px; -fx-font-style: italic;">
+            <font>
+                <Font name="Arial Italic" size="16.0" />
+            </font>
+        </Label>
+    </children>
+    <padding>
+        <Insets top="50" right="50" bottom="50" left="50" />
+    </padding>
+</VBox>

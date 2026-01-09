@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController" 
+      alignment="TOP_CENTER" spacing="30.0" 
+      style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #000033 0%, #1a0033 50%, #000033 100%);" 
+      prefWidth="900" prefHeight="700">
+    <children>
+        <!-- Header Section -->
+        <VBox alignment="CENTER" spacing="15.0" prefWidth="900">
+            <children>
+                <Label text="PAC-MAN" 
+                       style="-fx-font-size: 72px; -fx-text-fill: linear-gradient(to right, #FFD700, #FFA500, #FFD700); -fx-font-weight: bold;">
+                    <font>
+                        <Font name="Arial Black" size="72.0" />
+                    </font>
+                </Label>
+                
+                <Label fx:id="lastScoreLabel" text="Last Score: 0" 
+                       style="-fx-text-fill: #FFFFFF; -fx-font-size: 20px;">
+                    <font>
+                        <Font name="Arial Bold" size="20.0" />
+                    </font>
+                </Label>
+            </children>
+            <padding>
+                <Insets top="50" bottom="30" />
+            </padding>
+        </VBox>
+
+        <!-- Main Content Area -->
+        <HBox spacing="60" alignment="CENTER" prefWidth="900">
+            <children>
+                <!-- Difficulty Selection Panel -->
+                <VBox spacing="15" alignment="CENTER" 
+                      style="-fx-background-color: linear-gradient(to bottom, rgba(0, 50, 100, 0.7), rgba(0, 30, 70, 0.7)); -fx-background-radius: 20px; -fx-padding: 30px; -fx-border-color: linear-gradient(to bottom, #00FFFF, #0099CC); -fx-border-width: 2px; -fx-border-radius: 20px;"
+                      prefWidth="350">
+                    <children>
+                        <fx:define>
+                            <ToggleGroup fx:id="difficultyGroup" />
+                        </fx:define>
+
+                        <Label text="DIFFICULTY" 
+                               style="-fx-text-fill: linear-gradient(to right, #00FFFF, #00CCFF); -fx-font-size: 24px; -fx-font-weight: bold;">
+                            <font>
+                                <Font name="Arial Black" size="24.0" />
+                            </font>
+                        </Label>
+
+                        <VBox spacing="12" alignment="CENTER_LEFT" style="-fx-padding: 10px;">
+                            <children>
+                                <RadioButton fx:id="easyBtn" text="Easy" toggleGroup="$difficultyGroup" selected="true" 
+                                             style="-fx-text-fill: #FFFFFF; -fx-font-size: 18px; -fx-font-weight: bold;">
+                                    <font>
+                                        <Font name="Arial Bold" size="18.0" />
+                                    </font>
+                                </RadioButton>
+                                <RadioButton fx:id="normalBtn" text="Normal" toggleGroup="$difficultyGroup" 
+                                             style="-fx-text-fill: #FFFFFF; -fx-font-size: 18px; -fx-font-weight: bold;">
+                                    <font>
+                                        <Font name="Arial Bold" size="18.0" />
+                                    </font>
+                                </RadioButton>
+                                <RadioButton fx:id="hardBtn" text="Hard" toggleGroup="$difficultyGroup" 
+                                             style="-fx-text-fill: #FFFFFF; -fx-font-size: 18px; -fx-font-weight: bold;">
+                                    <font>
+                                        <Font name="Arial Bold" size="18.0" />
+                                    </font>
+                                </RadioButton>
+                                <RadioButton fx:id="insaneBtn" text="Insane" toggleGroup="$difficultyGroup" 
+                                             style="-fx-text-fill: #FFFFFF; -fx-font-size: 18px; -fx-font-weight: bold;">
+                                    <font>
+                                        <Font name="Arial Bold" size="18.0" />
+                                    </font>
+                                </RadioButton>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+
+                <!-- Action Buttons Panel -->
+                <VBox spacing="20" alignment="CENTER" 
+                      style="-fx-background-color: linear-gradient(to bottom, rgba(100, 0, 50, 0.7), rgba(70, 0, 35, 0.7)); -fx-background-radius: 20px; -fx-padding: 30px; -fx-border-color: linear-gradient(to bottom, #FF00FF, #CC00CC); -fx-border-width: 2px; -fx-border-radius: 20px;"
+                      prefWidth="400">
+                    <children>
+                        <Label text="GAME MODES" 
+                               style="-fx-text-fill: linear-gradient(to right, #FF00FF, #FF66FF); -fx-font-size: 24px; -fx-font-weight: bold;">
+                            <font>
+                                <Font name="Arial Black" size="24.0" />
+                            </font>
+                        </Label>
+                        
+                        <VBox spacing="15" alignment="CENTER">
+                            <children>
+                                <Button text="Single Player" onAction="#onSinglePlayer" 
+                                        prefWidth="250" prefHeight="55"
+                                        style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-background-color: linear-gradient(to bottom, #FFD700, #FFA500); -fx-text-fill: #000033; -fx-background-radius: 15px; -fx-cursor: hand;">
+                                    <font>
+                                        <Font name="Arial Bold" size="20.0" />
+                                    </font>
+                                </Button>
+                                
+                                <Button text="Multiplayer" onAction="#onMultiplayer" 
+                                        prefWidth="250" prefHeight="55"
+                                        style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-background-color: linear-gradient(to bottom, #4A90E2, #357ABD); -fx-text-fill: #FFFFFF; -fx-background-radius: 15px; -fx-cursor: hand;">
+                                    <font>
+                                        <Font name="Arial Bold" size="20.0" />
+                                    </font>
+                                </Button>
+                                
+                                <Button text="Scoreboard" onAction="#onScoreboard" 
+                                        prefWidth="250" prefHeight="55"
+                                        style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-background-color: linear-gradient(to bottom, #00FF00, #00CC00); -fx-text-fill: #000033; -fx-background-radius: 15px; -fx-cursor: hand;">
+                                    <font>
+                                        <Font name="Arial Bold" size="20.0" />
+                                    </font>
+                                </Button>
+                                
+                                <Button text="Quit" onAction="#onQuit" 
+                                        prefWidth="250" prefHeight="55"
+                                        style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-background-color: linear-gradient(to bottom, #FF6B6B, #E55555); -fx-text-fill: #FFFFFF; -fx-background-radius: 15px; -fx-cursor: hand;">
+                                    <font>
+                                        <Font name="Arial Bold" size="20.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        
+        <!-- Footer Instructions -->
+        <VBox alignment="CENTER" spacing="5" style="-fx-padding: 20px;">
+            <children>
+                <Label text="Press ENTER to start game" 
+                       style="-fx-text-fill: #FFFF66; -fx-font-size: 16px; -fx-font-style: italic;">
+                    <font>
+                        <Font name="Arial Italic" size="16.0" />
+                    </font>
+                </Label>
+                <Label text="Press ESC to quit" 
+                       style="-fx-text-fill: #CCCCCC; -fx-font-size: 14px; -fx-font-style: italic;">
+                    <font>
+                        <Font name="Arial Italic" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+        
+        <Region VBox.vgrow="ALWAYS" />
+    </children>
+    <padding>
+        <Insets top="20" right="40" bottom="20" left="40" />
+    </padding>
+</VBox>
